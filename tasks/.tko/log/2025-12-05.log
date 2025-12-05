@@ -5,3 +5,19 @@
 2025-12-05 19:31:38, MOVE, v:1, k:poo@zoo, mode:PICK
 2025-12-05 19:31:38, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:100, size:0
 2025-12-05 19:31:41, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-05 22:11:25, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-05 22:11:26, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:44
+2025-12-05 22:11:28, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-05 22:18:11, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-05 22:18:12, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:43
+2025-12-05 22:18:15, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-05 22:27:24, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-05 22:27:25, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0
+2025-12-05 22:27:27, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-05 22:44:21, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-05 22:44:21, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:100, size:44
+2025-12-05 22:44:23, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-05 23:07:48, MOVE, v:1, k:poo@zoo, mode:PICK
+2025-12-05 23:07:48, EXEC, v:1, k:poo@zoo, mode:LOCK, rate:0, size:62
+2025-12-05 23:07:54, MOVE, v:1, k:poo@zoo, mode:BACK
+2025-12-05 23:09:21, SELF, v:1, k:poo@zoo, rate:100, human:nao, iagen:nao, guide:sim, other:nao, alone:8, study:70
