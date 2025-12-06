@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-06_18-24-51",
+            "content": "@@ -1,245 +0,0 @@\n-from abc import ABC, abstractmethod%0A%0Aclass Pagamento(ABC):%0A    def __init__(self, valor: float):%0A        self.valor = valor%0A    %0A    @abstractmethod%0A    def valor(self):%0A        pass%0A    %0A    @abstractmethod%0A    def descricao(self):%0A        pass\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-12-06_18-32-49",
+            "content": "from abc import ABC, abstractmethod\n\nclass Pagamento(ABC):\n    def __init__(self, valor: float):\n        self.valor = valor\n    \n    @abstractmethod\n    def valor(self):\n        pass\n    \n    @abstractmethod\n    def descricao(self):\n        pass",
+            "lines": "13"
+        }
+    ]
+}
