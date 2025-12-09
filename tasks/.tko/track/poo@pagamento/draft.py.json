@@ -7,8 +7,18 @@
         },
         {
             "label": "2025-12-06_18-32-49",
-            "content": "from abc import ABC, abstractmethod\n\nclass Pagamento(ABC):\n    def __init__(self, valor: float):\n        self.valor = valor\n    \n    @abstractmethod\n    def valor(self):\n        pass\n    \n    @abstractmethod\n    def descricao(self):\n        pass",
+            "content": "@@ -87,32 +87,16 @@\n r: float\n-, descricao: str\n ):%0A     \n@@ -125,1172 +125,121 @@\n     \n-    self.descricao = descricao%0A    %0A    @abstractmethod%0A    def validar_valor(self) -%3E None:%0A        if self.valor  %3C= 0:%0A            raise ValueErro(%22valor negativo%22)%0A    %0A    def resumo(self):%0A        return f%22Pagamento de R$ %3Cvalor%3E: %3Cdescricao%3E%22%0A    %0A    @abstractmethod%0A    def processar(self):%0A        pass%0A%0Aclass Pix(Pagamento):%0A    def __init__(self, valor: float, descricao: str, chave: str, banco: str):%0A        super.__init__(valor, descricao)%0A        self.chave = chave%0A        self.banco = banco%0A    %0A    def processar(self):%0A        return f%22Pagando oix produto%7Bself.descricao%7D para %7Bself.chave%7D do banco %7Bself.banco%7D no valor %7Bself.valor%7D%22%0A%0Aclass Cartao(Pagamento):%0A    def __init__(self,numero: str, nome: str valor: float, descricao: str, limite_disponivel: float):%0A        super().__init__(valor, descricao)%0A        self.numero = numero%0A        self.nome = nome%0A        self.limite_disponivel = limite_disponivel%0A%0A    def processar(self):%0A        if self.valor %3E self.limite_disponivel:%0A            raise Exception(f%22Erro: Limite insuficiente%22)%0A        else:%0A            limite_disponivel -= self.valor%0A            return %22Pagamento concluido%22%0A%0A%0A    \n+%0A    @abstractmethod%0A    def valor(self):%0A        pass%0A    %0A    @abstractmethod%0A    def descricao(self):%0A        pass\n",
             "lines": "13"
+        },
+        {
+            "label": "2025-12-09_14-30-06",
+            "content": "@@ -659,34 +659,25 @@\n     def \n-realizar_pagamento\n+processar\n (self):%0A\n@@ -701,17 +701,17 @@\n Pagando \n-p\n+o\n ix produ\n@@ -1081,26 +1081,17 @@\n def \n-realizar_pagamento\n+processar\n (sel\n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-12-09_14-41-04",
+            "content": "from abc import ABC, abstractmethod\n\nclass Pagamento(ABC):\n    def __init__(self, valor: float, descricao: str):\n        self.valor = valor\n        self.descricao = descricao\n    \n    @abstractmethod\n    def validar_valor(self) -> None:\n        if self.valor  <= 0:\n            raise ValueErro(\"valor negativo\")\n    \n    def resumo(self):\n        return f\"Pagamento de R$ <valor>: <descricao>\"\n    \n    @abstractmethod\n    def processar(self):\n        pass\n\nclass Pix(Pagamento):\n    def __init__(self, valor: float, descricao: str, chave: str, banco: str):\n        super.__init__(valor, descricao)\n        self.chave = chave\n        self.banco = banco\n    \n    def realizar_pagamento(self):\n        return f\"Pagando pix produto{self.descricao} para {self.chave} do banco {self.banco} no valor {self.valor}\"\n\nclass Cartao(Pagamento):\n    def __init__(self,numero: str, nome: str valor: float, descricao: str, limite_disponivel: float):\n        super().__init__(valor, descricao)\n        self.numero = numero\n        self.nome = nome\n        self.limite_disponivel = limite_disponivel\n\n    def realizar_pagamento(self):\n        if self.valor > self.limite_disponivel:\n            raise Exception(f\"Erro: Limite insuficiente\")\n        else:\n            limite_disponivel -= self.valor\n            return \"Pagamento concluido\"\n\n\n    ",
+            "lines": "44"
         }
     ]
 }
