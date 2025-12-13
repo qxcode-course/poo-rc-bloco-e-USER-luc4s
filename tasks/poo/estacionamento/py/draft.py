@@ -9,7 +9,7 @@ class Veiculo(ABC):
     def setEntrada(self, horaE: int) -> None:
         self.horaE = horaE
 
-    def getEntrada(self) -> float:
+    def getEntrada(self) -> int:
         return self.horaE
     def getTipo(self) -> str:
         return self.tipo
@@ -21,7 +21,7 @@ class Veiculo(ABC):
         pass
     
     def __str__(self) -> str:
-        return f"{self.tipo}:{self.id} entrada={self.horaE}"
+        return f"______{self.tipo} : _____{self.id} : {self.horaE}"
 
 class Bike(Veiculo):
     def __init__(self, id: str):
@@ -58,12 +58,43 @@ class Estacionamento:
                 return i
         return -1
     def estacionar(self, veiculo: Veiculo) -> None:
+        veiculo.setEntrada(self.horaA)
+        self.veiculos.append(veiculo)
 
     def pagar(self, id: str) -> None:
+        idx = self.procurarVeiculo(id)
+        if idx == -1:
+            print("Veiculo nao encontrado")
+            return
+        veiculo = self.veiculos[idx]
+        valor = veiculo.calcularValor(self.horaA)
+        print(
+             f"{veiculo.getTipo()} chegou {veiculo.getEntrada()} "
+            f"saiu {self.horaA}. Pagar R$ {valor:.2f}"
+        )
 
     def sair(self, id: str) -> None:
+        idx = self.procurarVeiculo(id)
+        if idx == -1:
+            print("Veículo não encontrado")
+            return
+        veiculo = self.veiculos[idx]
+        valor = veiculo.calcularValor(self.horaA)
+        print(
+            f"{veiculo.getTipo()} chegou {veiculo.getEntrada()} "
+            f"saiu {self.horaA}. Pagar R$ {valor:.2f}"
+        )
+        self.veiculos.pop(idx)
 
     def passarTempo(self, tempo: int) -> None:
+        self.horaA += tempo
 
     def __str__(self) -> str:
-        return f"" 
+        if len(self.veiculos) == 0:
+            return ""
+
+        resultado = ""
+        for v in self.veiculos:
+            resultado += str(v) + "\n"
+        resultado += f"Hora atual: {self.horaA}"
+        return resultado

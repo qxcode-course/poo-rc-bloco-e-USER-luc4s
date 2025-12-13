@@ -27,7 +27,7 @@ class Pix(Pagamento):
         return f"Pagando pix produto{self.descricao} para {self.chave} do banco {self.banco} no valor {self.valor}"
 
 class Cartao(Pagamento):
-    def __init__(self,numero: str, nome: str valor: float, descricao: str, limite_disponivel: float):
+    def __init__(self,numero: str, nome: str, valor: float, descricao: str, limite_disponivel: float):
         super().__init__(valor, descricao)
         self.numero = numero
         self.nome = nome
