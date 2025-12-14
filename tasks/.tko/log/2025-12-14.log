@@ -1,0 +1,10 @@
+2025-12-14 17:19:40, MOVE, v:1, k:poo@pagamento, mode:PICK
+2025-12-14 17:19:41, EXEC, v:1, k:poo@pagamento, mode:LOCK, rate:100
+2025-12-14 17:19:42, MOVE, v:1, k:poo@pagamento, mode:BACK
+2025-12-14 18:00:21, MOVE, v:1, k:poo@pagamento, mode:PICK
+2025-12-14 18:00:21, EXEC, v:1, k:poo@pagamento, mode:LOCK, rate:100, size:59
+2025-12-14 18:00:23, MOVE, v:1, k:poo@pagamento, mode:BACK
+2025-12-14 18:04:24, MOVE, v:1, k:poo@pagamento, mode:PICK
+2025-12-14 18:04:25, EXEC, v:1, k:poo@pagamento, mode:LOCK, rate:100, size:57
+2025-12-14 18:04:31, MOVE, v:1, k:poo@pagamento, mode:BACK
+2025-12-14 18:05:26, SELF, v:1, k:poo@pagamento, human:sim, iagen:nao, guide:sim, other:nao, alone:6, study:120
