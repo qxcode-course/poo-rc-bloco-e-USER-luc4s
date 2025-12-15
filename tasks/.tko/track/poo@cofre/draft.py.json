@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-15_02-23-07",
+            "content": "@@ -1,850 +0,0 @@\n-from abc import ABC, abstractmethod%0A%0Aclass Valuable(ABC):%0A    @abstractmethod%0A    def getLabel(self) -%3E str:%0A        pass%0A%0A    @abstractmethod%0A    def getValue(self) -%3E float:%0A        pass%0A    %0A    @abstractmethod%0A    def getVolume(self) -%3E int:%0A        pass%0A%0A    def __str__(self) -%3E str:%0A        pass%0A    %0Afrom enum import Enum%0A%0Aclass Coin(Enum):%0A    m10 = (%22M10%22, 0.10, 1)%0A    m25 = (%22M25%22, 0.25, 1)%0A    m50 = (%22M50%22, 0.50, 1)%0A    m100 = (%22M100%22, 1.00, 1)%0A%0A    def __init__(self, label: str, value: float, volume: int):%0A        self.label = label%0A        self.value = value%0A        self.volume = volume%0A%0A    def get.Label(self) -%3E str:%0A        return self.label%0A    %0A    def getValue(self) -%3E float:%0A        return self.value%0A    %0A    def getVolume(self) -%3E int:%0A        return self.volume%0A%0A    def __str__(self) -%3E str:%0A        return self.label%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-12-15_02-40-26",
+            "content": "from abc import ABC, abstractmethod\n\nclass Valuable(ABC):\n    @abstractmethod\n    def getLabel(self) -> str:\n        pass\n\n    @abstractmethod\n    def getValue(self) -> float:\n        pass\n    \n    @abstractmethod\n    def getVolume(self) -> int:\n        pass\n\n    def __str__(self) -> str:\n        pass\n    \nfrom enum import Enum\n\nclass Coin(Enum):\n    m10 = (\"M10\", 0.10, 1)\n    m25 = (\"M25\", 0.25, 1)\n    m50 = (\"M50\", 0.50, 1)\n    m100 = (\"M100\", 1.00, 1)\n\n    def __init__(self, label: str, value: float, volume: int):\n        self.label = label\n        self.value = value\n        self.volume = volume\n\n    def get.Label(self) -> str:\n        return self.label\n    \n    def getValue(self) -> float:\n        return self.value\n    \n    def getVolume(self) -> int:\n        return self.volume\n\n    def __str__(self) -> str:\n        return self.label\n",
+            "lines": "42"
+        }
+    ]
+}
