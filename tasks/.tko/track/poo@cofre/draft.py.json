@@ -7,8 +7,23 @@
         },
         {
             "label": "2025-12-15_02-40-26",
-            "content": "from abc import ABC, abstractmethod\n\nclass Valuable(ABC):\n    @abstractmethod\n    def getLabel(self) -> str:\n        pass\n\n    @abstractmethod\n    def getValue(self) -> float:\n        pass\n    \n    @abstractmethod\n    def getVolume(self) -> int:\n        pass\n\n    def __str__(self) -> str:\n        pass\n    \nfrom enum import Enum\n\nclass Coin(Enum):\n    m10 = (\"M10\", 0.10, 1)\n    m25 = (\"M25\", 0.25, 1)\n    m50 = (\"M50\", 0.50, 1)\n    m100 = (\"M100\", 1.00, 1)\n\n    def __init__(self, label: str, value: float, volume: int):\n        self.label = label\n        self.value = value\n        self.volume = volume\n\n    def get.Label(self) -> str:\n        return self.label\n    \n    def getValue(self) -> float:\n        return self.value\n    \n    def getVolume(self) -> int:\n        return self.volume\n\n    def __str__(self) -> str:\n        return self.label\n",
+            "content": "@@ -295,62 +295,12 @@\n     \n-return f%22%7Bself.getLabel()%7D (R$ %7Bself.getValue():.2f%7D)%22\n+pass\n %0A   \n@@ -847,631 +847,4 @@\n bel%0A\n-%0Aclass Item(Valuable):%0A    def __init__(self, label: str, value: float, volume: int):%0A        self.label = label%0A        self.value = value%0A        self.volume = volume%0A%0A    def getLabel(self) -%3E str:%0A        return self.label%0A    %0A    def getValue(self) -%3E float:%0A        return self.value%0A%0A    def getVolume(self) -%3E int:%0A        return self.getVolume%0A%0A    def setLabel(self, label: str) -%3E None:%0A        self.label = label%0A    def setValue(self, value: float) -%3E None:%0A        self.value = value%0A    def setVolume(self, volume: int) -%3E None:%0A        self.volume = volume%0A%0A    def __str__(self) -%3E str:%0A        return f%22%22    \n",
             "lines": "42"
+        },
+        {
+            "label": "2025-12-18_19-25-25",
+            "content": "@@ -653,32 +653,33 @@\n ume%0A%0A    def get\n+.\n Label(self) -%3E s\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-12-18_19-25-41",
+            "content": "@@ -1518,41 +1518,9 @@\n n f%22\n-%7Bself.label%7D (R$ %7Bself.value:.2f%7D)%22%0A%0A\n+%22    \n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-12-18_19-38-02",
+            "content": "from abc import ABC, abstractmethod\n\nclass Valuable(ABC):\n    @abstractmethod\n    def getLabel(self) -> str:\n        pass\n\n    @abstractmethod\n    def getValue(self) -> float:\n        pass\n    \n    @abstractmethod\n    def getVolume(self) -> int:\n        pass\n\n    def __str__(self) -> str:\n        return f\"{self.getLabel()} (R$ {self.getValue():.2f})\"\n    \nfrom enum import Enum\n\nclass Coin(Enum):\n    m10 = (\"M10\", 0.10, 1)\n    m25 = (\"M25\", 0.25, 1)\n    m50 = (\"M50\", 0.50, 1)\n    m100 = (\"M100\", 1.00, 1)\n\n    def __init__(self, label: str, value: float, volume: int):\n        self.label = label\n        self.value = value\n        self.volume = volume\n\n    def getLabel(self) -> str:\n        return self.label\n    \n    def getValue(self) -> float:\n        return self.value\n    \n    def getVolume(self) -> int:\n        return self.volume\n\n    def __str__(self) -> str:\n        return self.label\n\nclass Item(Valuable):\n    def __init__(self, label: str, value: float, volume: int):\n        self.label = label\n        self.value = value\n        self.volume = volume\n\n    def getLabel(self) -> str:\n        return self.label\n    \n    def getValue(self) -> float:\n        return self.value\n\n    def getVolume(self) -> int:\n        return self.getVolume\n\n    def setLabel(self, label: str) -> None:\n        self.label = label\n    def setValue(self, value: float) -> None:\n        self.value = value\n    def setVolume(self, volume: int) -> None:\n        self.volume = volume\n\n    def __str__(self) -> str:\n        return f\"{self.label} (R$ {self.value:.2f})\"\n\n",
+            "lines": "68"
         }
     ]
 }

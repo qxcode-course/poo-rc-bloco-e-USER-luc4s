@@ -14,7 +14,7 @@ class Valuable(ABC):
         pass
 
     def __str__(self) -> str:
-        pass
+        return f"{self.getLabel()} (R$ {self.getValue():.2f})"
     
 from enum import Enum
 
@@ -29,7 +29,7 @@ class Coin(Enum):
         self.value = value
         self.volume = volume
 
-    def get.Label(self) -> str:
+    def getLabel(self) -> str:
         return self.label
     
     def getValue(self) -> float:
@@ -40,3 +40,29 @@ class Coin(Enum):
 
     def __str__(self) -> str:
         return self.label
+
+class Item(Valuable):
+    def __init__(self, label: str, value: float, volume: int):
+        self.label = label
+        self.value = value
+        self.volume = volume
+
+    def getLabel(self) -> str:
+        return self.label
+    
+    def getValue(self) -> float:
+        return self.value
+
+    def getVolume(self) -> int:
+        return self.getVolume
+
+    def setLabel(self, label: str) -> None:
+        self.label = label
+    def setValue(self, value: float) -> None:
+        self.value = value
+    def setVolume(self, volume: int) -> None:
+        self.volume = volume
+
+    def __str__(self) -> str:
+        return f"{self.label} (R$ {self.value:.2f})"
+
