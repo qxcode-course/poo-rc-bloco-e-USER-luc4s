@@ -90,11 +90,53 @@ class Estacionamento:
         self.horaA += tempo
 
     def __str__(self) -> str:
-        if len(self.veiculos) == 0:
-            return ""
-
         resultado = ""
         for v in self.veiculos:
             resultado += str(v) + "\n"
         resultado += f"Hora atual: {self.horaA}"
         return resultado
+
+def main():
+    est = Estacionamento(0)
+
+    while True:
+        try:
+            line = input().strip()
+        except  EOFError:
+            break
+        
+        if line == "":
+            continue
+        
+        if line == "$end":
+            break
+        
+        partes = line.split()
+        comando = partes[0]
+        
+        if comando == "$show":
+            print(est)
+        
+        elif comando == "$tempo":
+            est.passarTempo(int(partes[1]))
+        
+        elif comando == "$estacionar":
+            tipo  = partes[1].lower()
+            vid = partes[2]
+
+            if tipo == "bike":
+                v = Bike(vid)
+            elif tipo == "moto":
+                v = Moto(vid)
+            elif tipo == "carro":
+                v = Carro(vid)
+            else:
+                continue
+
+            est.estacionar(v)
+        
+        elif comando == "$pagar":
+            est.pagar(partes[1])
+
+if __name__ == "__main__":
+    main()
